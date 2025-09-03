@@ -23,7 +23,4 @@ fun MessageModel.toData(): SendMessage {
     return SendMessage(senderId, message, receiverId ?: "1")
 }
 
-fun MessageModel.toGetMessage(): GetMessage {
-    return GetMessage(senderId, message, timestamp ?: "1")
-}
 

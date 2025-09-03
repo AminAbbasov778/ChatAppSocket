@@ -26,7 +26,6 @@ class UserRepositoryImpl @Inject constructor(
 
     private val currentUsers = mutableMapOf<String, UserModel>()
 
-    // Son mesajları list şəklində saxlayırıq
     private val _lastMessageInfo = MutableStateFlow<List<LastMessageInfo>>(emptyList())
     val lastMessageInfo: StateFlow<List<LastMessageInfo>> = _lastMessageInfo
 
@@ -44,10 +43,8 @@ class UserRepositoryImpl @Inject constructor(
             val mutable = currentList.toMutableList()
             val index = mutable.indexOfFirst { it.userId == userId }
             if (index >= 0) {
-                // Əgər user var, update et
                 mutable[index] = LastMessageInfo(userId, message, timestamp)
             } else {
-                // Əgər yoxdursa, əlavə et
                 mutable.add(LastMessageInfo(userId, message, timestamp))
             }
             mutable
@@ -83,14 +80,12 @@ class UserRepositoryImpl @Inject constructor(
     override fun observeMessages(): Flow<MessageModel> =
         socketHandler.messagesFlow.map { msg ->
             val domainMsg = msg.toDomain()
-            // Mesaj gəldikdə list-i yenilə
             setLastMessageInfo(domainMsg.senderId, domainMsg.message, domainMsg.timestamp ?: "")
             domainMsg
         }
 
     override fun sendMessage(message: MessageModel) {
         socketHandler.sendMessage(message.toData())
-        // Göndərilən mesajı da list-ə əlavə et
         setLastMessageInfo(message.receiverId ?: "1" , message.message, message.timestamp ?: "")
     }
 
