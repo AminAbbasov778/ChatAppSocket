@@ -4,10 +4,12 @@ ChatApp is a modern Android chat application built with Kotlin, designed to deli
 
 The app is built using MVI (Model-View-Intent) architecture, Clean Architecture, Kotlin Coroutines, Jetpack Compose, and Hilt for dependency injection. Navigation is type-safe using Jetpack Navigation.
 
-📸 Screenshots & Demo
-| Home Screen | Chat Screen |
-|-------------|------------|
-| <img src="screenshots/home.png" width="200" height="400"> | <img src="screenshots/chat.png" width="200" height="400"> |
+## 📸 Screenshots & Demo
+
+| Home Screen | Chat Screen | Demo (GIF) |
+|-------------|-------------|------------|
+| <img src="screenshots/home.png" width="200" height="400"> | <img src="screenshots/chatscreen.png" width="200" height="400"> | <img src="screenshots/" width="220"> |
+ight="400"> |
 
 📱 Key Screens & Features
 
@@ -92,4 +94,5 @@ The app is built using MVI (Model-View-Intent) architecture, Clean Architecture,
 - Supports online/offline state per user
 - Search bar filters users in real-time using Flow and StateFlow
 - **Note:** The server is **local only**. Other users are simulated; there is **no real external server** involved. This allows testing all features offline.
+
 
