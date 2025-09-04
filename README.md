@@ -8,7 +8,7 @@ The app is built using MVI (Model-View-Intent) architecture, Clean Architecture,
 
 | Home Screen | Chat Screen | Demo (GIF) |
 |-------------|-------------|------------|
-| <img src="Screenshot/home.png" width="200" height="400"> | <img src="Screenshot/chatscreen.png" width="200" height="400"> | <img src="Screenshot/demo .gif" width="200" height="400"> |
+| <img src="Screenshot/home.png" width="200" height="400"> | <img src="Screenshot/chatscreen.png" width="200" height="400"> | <img src="Screenshot/demo.gif" width="200" height="400"> |
 
 ---
 
@@ -95,6 +95,7 @@ The app is built using MVI (Model-View-Intent) architecture, Clean Architecture,
 - Supports online/offline state per user
 - Search bar filters users in real-time using Flow and StateFlow
 - **Note:** The server is **local only**. Other users are simulated; there is **no real external server** involved. This allows testing all features offline.
+
 
 
 
